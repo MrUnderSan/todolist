@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 type TaskType = {
     id: number
@@ -13,6 +13,25 @@ type PropsType = {
 }
 
 export const Todolist = (props: PropsType) => {
+
+    type filterType = 'all' | 'active' | 'completed'
+
+    const [filter, setFilter] = useState<filterType>('all')
+
+    const changeFiler = (filter: filterType) => {
+        setFilter(filter)
+    }
+    const filterTasks = () => {
+        switch (filter) {
+            case 'active':
+                return props.tasks.filter(t => !t.isDone)
+            case 'completed':
+                return props.tasks.filter(t => t.isDone)
+            default:
+                return props.tasks
+        }
+    }
+
     return (
         <div>
             <h3>{props.title}</h3>
@@ -21,7 +40,7 @@ export const Todolist = (props: PropsType) => {
                 <button>+</button>
             </div>
             <ul>
-                {props.tasks.map(t => {
+                {filterTasks().map(t => {
                     return (
                         <li key={t.id}><input type="checkbox" checked={t.isDone}/>
                             <span>{t.title}</span>
@@ -31,9 +50,9 @@ export const Todolist = (props: PropsType) => {
                 })}
             </ul>
             <div>
-                <button>All</button>
-                <button>Active</button>
-                <button>Completed</button>
+                <button onClick={() => changeFiler('all')}>All</button>
+                <button onClick={() => changeFiler('active')}>Active</button>
+                <button onClick={() => changeFiler('completed')}>Completed</button>
             </div>
         </div>
     )
