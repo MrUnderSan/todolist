@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 type TaskType = {
     id: number
@@ -9,6 +9,7 @@ type TaskType = {
 type PropsType = {
     title: string
     tasks: TaskType[]
+    removeTask: (id: number) => void
 }
 
 export const Todolist = (props: PropsType) => {
@@ -20,9 +21,12 @@ export const Todolist = (props: PropsType) => {
                 <button>+</button>
             </div>
             <ul>
-                {props.tasks.map(task => {
+                {props.tasks.map(t => {
                     return (
-                        <li key={task.id}><input type="checkbox" checked={task.isDone}/> <span>{task.title}</span></li>
+                        <li key={t.id}><input type="checkbox" checked={t.isDone}/>
+                            <span>{t.title}</span>
+                            <button onClick={() => props.removeTask(t.id)}>X</button>
+                        </li>
                     )
                 })}
             </ul>
