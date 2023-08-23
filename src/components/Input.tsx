@@ -15,6 +15,7 @@ export const Input = (props: InputPropsType) => {
 
     const buttonCallbackHandler = () => {
         props.callback(text)
+        setText('')
     }
 
     return (
