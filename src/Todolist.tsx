@@ -27,13 +27,17 @@ export function Todolist(props: PropsType) {
         <h3>{props.title}</h3>
         <Input callback={props.addTask}/>
         <ul>
-            {filteredTask.map(t =>
-                <li key={t.id}>
-                    <input type="checkbox" checked={t.isDone}/>
-                    <span>{t.title} </span>
-                    <button onClick={() => props.removeTask(t.id)}>✖️</button>
-                </li>
-            )}
+            {filteredTask.map(t => {
+                const onClickHandler = () => props.removeTask(t.id)
+                return (
+                    <li key={t.id}>
+                        <input type="checkbox" checked={t.isDone}/>
+                        <span>{t.title} </span>
+                        <button onClick={onClickHandler}>✖️</button>
+                    </li>
+                )
+
+            })}
         </ul>
         <div>
             <button onClick={() => {
