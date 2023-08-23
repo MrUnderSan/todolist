@@ -21,7 +21,7 @@ export const Input = (props: InputPropsType) => {
         setText('')
     }
 
-    const onKeyPressHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const onKeyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             submitText()
             ClearInput()
@@ -35,7 +35,7 @@ export const Input = (props: InputPropsType) => {
 
     return (
         <div>
-            <input value={text} onChange={onChangeHandler} onKeyPress={onKeyPressHandler}/>
+            <input value={text} onChange={onChangeHandler} onKeyDown={onKeyDownHandler}/>
             <Button name="+" callback={buttonCallbackHandler}/>
         </div>
     )
