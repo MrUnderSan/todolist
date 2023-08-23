@@ -20,10 +20,9 @@ export function Todolist(props: PropsType) {
             : filter === 'completed' ? props.tasks.filter(t => t.isDone)
                 : props.tasks;
 
-    function changeFilter(f: FilterType) {
-        setFilter(f)
-    }
-
+    const changeFilter = (f: FilterType) => {
+        setFilter(f);
+    };
 
     return <div>
         <h3>{props.title}</h3>
