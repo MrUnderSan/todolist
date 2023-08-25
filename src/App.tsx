@@ -1,25 +1,55 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {Todolist} from "./Todolist";
+import {Country} from "./Country";
 
-const task1 = [
-    {id: 1, title: "HTML&CSS", isDone: true},
-    {id: 2, title: "JS", isDone: true},
-    {id: 3, title: "React", isDone: false},
+export type BanknotsType = 'Dollars' | 'RUBLS' | 'All'
+
+export type MoneyType = {
+    banknotes: BanknotsType
+    value: number
+    number: string
+}
+
+let defaultMoney: MoneyType[] = [  // типизируем
+    {banknotes: 'Dollars', value: 100, number: ' a1234567890'},
+    {banknotes: 'Dollars', value: 50, number: ' z1234567890'},
+    {banknotes: 'RUBLS', value: 100, number: ' w1234567890'},
+    {banknotes: 'Dollars', value: 100, number: ' e1234567890'},
+    {banknotes: 'Dollars', value: 50, number: ' c1234567890'},
+    {banknotes: 'RUBLS', value: 100, number: ' r1234567890'},
+    {banknotes: 'Dollars', value: 50, number: ' x1234567890'},
+    {banknotes: 'RUBLS', value: 50, number: ' v1234567890'},
 ]
-const task2 = [
-    {id: 1, title: "Hello world", isDone: true},
-    {id: 2, title: "I am happy", isDone: false},
-    {id: 3, title: "Yo", isDone: false},
-]
+
+// типизируем на входе и выходе
+export const moneyFilter = (money: MoneyType[], filter: BanknotsType): any => {
+    if (filter !== 'All') {
+        return money.filter(m=> m.banknotes === filter)
+    }
+    return defaultMoney
+    //если пришел filter со значением 'All', то возвращаем все банкноты
+    //return money.filter... ну да, придется фильтровать
+}
 
 function App() {
+
+    const [filterValue, setFilterValue] = useState<any>('')   // по умолчанию указываем все банкноты
+
+    // а вот сейчас притормаживаем. И вдумчиво: константа filteredMoney получает результат функции moneyFilter
+    // в функцию передаем деньги и фильтр, по которому ихбудем выдавать(ретёрнуть)
+    const filteredMoney = moneyFilter(defaultMoney, filterValue)
     return (
         <div className="App">
-            <Todolist title="What to learn" tasks={task1}/>
-            <Todolist title="Songs" tasks={task2}/>
+            <Country
+                data={filteredMoney}   //отрисовать будем деньги после фильтрации
+                setFilterValue={setFilterValue}  //useState передаем? Так можно было?!
+
+            />
         </div>
     );
 }
+
+// Итого: в этой компоненте у нас мозги. А вот отрисовка где-то глубже. Погружаемся в Country
+
 
 export default App;
