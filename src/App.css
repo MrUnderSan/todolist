@@ -2,6 +2,7 @@
 .App {
   padding: 30px;
   display: flex;
+  background-color: beige;
 }
 
 .App > div {
@@ -22,5 +23,12 @@
 
 .is-done {
   opacity: 0.5;
+}
+
+.todolist {
+  background-color: darkseagreen;
+  padding: 15px;
+  border-radius: 5px;
+  min-height: 300px;
 }
 
