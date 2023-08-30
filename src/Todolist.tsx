@@ -1,4 +1,5 @@
 import React, {ChangeEvent, useState, KeyboardEvent} from 'react';
+import {Button} from './components/Button';
 
 type filterType = 'all' | 'active' | 'completed'
 
@@ -75,10 +76,20 @@ export const Todolist = (props: PropsType) => {
             <li key={t.id} className={t.isDone ? 'is-done' : ''}>
                 <input type="checkbox" checked={t.isDone} onChange={onChangeCheckboxHandler}/>
                 <span>{t.title}</span>
-                <button onClick={onClickButtonHandler}>X</button>
+                <Button name='X' callback={onClickButtonHandler} />
             </li>
         )
     })
+
+    const onClickAllButtonHAndler = () => {
+        changeFiler('all')
+    }
+    const onClickActiveButtonHAndler = () => {
+        changeFiler('active')
+    }
+    const onClickCompletedButtonHAndler = () => {
+        changeFiler('completed')
+    }
 
     return (
         <div>
@@ -89,24 +100,28 @@ export const Todolist = (props: PropsType) => {
                        onKeyDown={onKeyDownInputHandler}
                        className={error ? 'error' : ''}
                 />
-                <button onClick={onClickButtonHandler}>+</button>
+                <Button name='+' callback={onClickButtonHandler} />
                 {error && <div className='error-message'>{error}</div>}
             </div>
             <ul>
                 {tasksList}
             </ul>
             <div>
-                <button
-                    onClick={() => changeFiler('all')}
+                <Button
+                    name='All'
+                    callback={onClickAllButtonHAndler}
                     className={filter === 'all' ? 'active-filter' : ''}
-                >All</button>
-                <button onClick={() => changeFiler('active')}
-                        className={filter === 'active' ? 'active-filter' : ''}
-                >Active</button>
-                <button
-                    onClick={() => changeFiler('completed')}
+                />
+                <Button
+                    name='Active'
+                    callback={onClickActiveButtonHAndler}
+                    className={filter === 'active' ? 'active-filter' : ''}
+                />
+                <Button
+                    name='Completed'
+                    callback={onClickCompletedButtonHAndler}
                     className={filter === 'completed' ? 'active-filter' : ''}
-                >Completed</button>
+                />
             </div>
         </div>
     )
