@@ -54,6 +54,15 @@ export const Todolist = (props: PropsType) => {
         }
     }
 
+    const tasksList = filterTasks().map(t => {
+        return (
+            <li key={t.id}><input type="checkbox" checked={t.isDone}/>
+                <span>{t.title}</span>
+                <button onClick={() => props.removeTask(t.id)}>X</button>
+            </li>
+        )
+    })
+
     return (
         <div>
             <h3>{props.title}</h3>
@@ -64,14 +73,7 @@ export const Todolist = (props: PropsType) => {
                 <button onClick={onClickButtonHandler}>+</button>
             </div>
             <ul>
-                {filterTasks().map(t => {
-                    return (
-                        <li key={t.id}><input type="checkbox" checked={t.isDone}/>
-                            <span>{t.title}</span>
-                            <button onClick={() => props.removeTask(t.id)}>X</button>
-                        </li>
-                    )
-                })}
+                {tasksList}
             </ul>
             <div>
                 <button onClick={() => changeFiler('all')}>All</button>
