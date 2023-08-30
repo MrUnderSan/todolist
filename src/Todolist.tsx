@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 type TaskType = {
-    id: number
+    id: string
     title: string
     isDone: boolean
 }
@@ -9,7 +9,7 @@ type TaskType = {
 type PropsType = {
     title: string
     tasks: TaskType[]
-    removeTask: (id: number) => void
+    removeTask: (id: string) => void
 }
 
 export const Todolist = (props: PropsType) => {

@@ -1,16 +1,17 @@
 import React, {useState} from 'react';
 import './App.css';
 import {Todolist} from './Todolist';
+import {v1} from 'uuid';
 
 function App() {
 
     const [task, setTask] = useState([
-        {id: 1, title: 'HTML&CSS', isDone: true},
-        {id: 2, title: 'JS', isDone: true},
-        {id: 3, title: 'React', isDone: false},
+        {id: v1(), title: 'HTML&CSS', isDone: true},
+        {id: v1(), title: 'JS', isDone: true},
+        {id: v1(), title: 'React', isDone: false},
     ])
 
-    const removeTask = (id: number) => {
+    const removeTask = (id: string) => {
         setTask(task.filter(t => t.id !== id))
     }
 
