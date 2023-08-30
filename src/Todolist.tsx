@@ -55,10 +55,13 @@ export const Todolist = (props: PropsType) => {
     }
 
     const tasksList = filterTasks().map(t => {
+        const onClickButtonHandler = () => {
+            props.removeTask(t.id)
+        }
         return (
             <li key={t.id}><input type="checkbox" checked={t.isDone}/>
                 <span>{t.title}</span>
-                <button onClick={() => props.removeTask(t.id)}>X</button>
+                <button onClick={onClickButtonHandler}>X</button>
             </li>
         )
     })
