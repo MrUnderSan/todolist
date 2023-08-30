@@ -20,6 +20,13 @@ function App() {
         setTasks([newTask, ...tasks])
     }
 
+    const changeTaskStatus = (taskId: string, isDone: boolean) => {
+        let task = tasks.find(t=> t.id === taskId)
+        task && (task.isDone = isDone)
+        setTasks([...tasks])
+
+    }
+
     return (
         <div className="App">
             <Todolist
@@ -27,6 +34,7 @@ function App() {
                 tasks={tasks}
                 removeTask={removeTask}
                 addTask={addTask}
+                changeTaskStatus={changeTaskStatus}
             />
         </div>
     );
