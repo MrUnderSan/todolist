@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 
 type TaskType = {
     id: string
@@ -10,6 +10,7 @@ type PropsType = {
     title: string
     tasks: TaskType[]
     removeTask: (id: string) => void
+    addTask: (taskTitle: string) => void
 }
 
 export const Todolist = (props: PropsType) => {
@@ -17,6 +18,8 @@ export const Todolist = (props: PropsType) => {
     type filterType = 'all' | 'active' | 'completed'
 
     const [filter, setFilter] = useState<filterType>('all')
+
+    const [value, setValue] = useState('')
 
     const changeFiler = (filter: filterType) => {
         setFilter(filter)
@@ -32,12 +35,21 @@ export const Todolist = (props: PropsType) => {
         }
     }
 
+    const onChangeInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        setValue(e.currentTarget.value)
+    }
+
+    const onClickButtonHandler = () => {
+        props.addTask(value)
+        setValue('')
+    }
+
     return (
         <div>
             <h3>{props.title}</h3>
             <div>
-                <input/>
-                <button>+</button>
+                <input value={value} onChange={onChangeInputHandler}/>
+                <button onClick={onClickButtonHandler}>+</button>
             </div>
             <ul>
                 {filterTasks().map(t => {
