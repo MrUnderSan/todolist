@@ -1,42 +1,54 @@
 import React, {useState} from 'react';
 import './App.css';
 import {TaskType, Todolist} from './Todolist';
-import * as crypto from 'crypto';
-import {v1} from 'uuid';
 
-export type FilterValuesType = "all" | "active" | "completed";
+export type FilterValuesType = 'all' | 'active' | 'completed';
 
 function App() {
     //BLL:
-    let [tasks, setTasks] = useState<TaskType[]>([
-        { id: v1(), title: "HTML&CSS", isDone: true },
-        { id: v1(), title: "JS", isDone: true },
-        { id: v1(), title: "ReactJS", isDone: false },
-        { id: v1(), title: "Rest API", isDone: false },
-        { id: v1(), title: "GraphQL", isDone: false },
+    const [tasks, setTasks] = useState<TaskType[]>([
+        {id: crypto.randomUUID(), title: 'HTML&CSS', isDone: true},
+        {id: crypto.randomUUID(), title: 'JS', isDone: true},
+        {id: crypto.randomUUID(), title: 'ReactJS', isDone: false},
+        {id: crypto.randomUUID(), title: 'Rest API', isDone: false},
+        {id: crypto.randomUUID(), title: 'GraphQL', isDone: false},
     ]);
 
-    let [filter, setFilter] = useState<FilterValuesType>("all");
+    // crypto.randomUUID() / v1()
+
+    const [filter, setFilter] = useState<FilterValuesType>('all');
 
     //CRUD:
-    function removeTask(id: string) {
-        setTasks(tasks.filter(t => t.id !== id))
-    }
+
+    const addTask = (taskTitle: string) => {
+        const newTask: TaskType = {
+            id: crypto.randomUUID(),
+            title: taskTitle,
+            isDone: false
+        }
+        setTasks([newTask, ...tasks])
+    } // C
+
+    function removeTask(taskId: string) {
+        setTasks(tasks.filter(t => t.id !== taskId))
+    } // D
+
+    const changeTaskStatus = (taskId: string, taskStatus: boolean) => {
+
+        setTasks(tasks.map(t =>
+            t.id === taskId ? {...t, isDone: taskStatus} : t
+        ))
+
+    } // U
+
+    const changeTaskTitle = () => {
+    } //U
 
     function changeFilter(value: FilterValuesType) {
         setFilter(value);
     }
 
-    // crypto.randomUUID() / v1()
 
-    const addTask = (taskTitle: string) => {
-        const newTask: TaskType = {
-                id: v1(),
-                title: taskTitle,
-                isDone: false
-        }
-        setTasks([newTask, ...tasks])
-    }
     //UI:
 
     const getTaskForRender = (allTask: TaskType[], nextFiler: FilterValuesType) => {
@@ -59,6 +71,8 @@ function App() {
                       removeTask={removeTask}
                       changeFilter={changeFilter}
                       addTask={addTask}
+                      changeTaskStatus={changeTaskStatus}
+                      filter={filter}
             />
         </div>
     );

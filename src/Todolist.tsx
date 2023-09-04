@@ -14,14 +14,24 @@ type PropsType = {
     removeTask: (taskId: string) => void
     changeFilter: (value: FilterValuesType) => void
     addTask: (taskId: string) => void
+    changeTaskStatus: (taskId: string, taskStatus: boolean) => void
+    filter: FilterValuesType
 }
 
-export const Todolist: React.FC<PropsType> = ({title, tasks, ...props}) => {
+export const Todolist: React.FC<PropsType> = (
+    {
+        title,
+        tasks,
+        filter,
+        ...props
+    }) => {
 
     // const title = props.title
     // const {title} = props
 
     const [value, setValue] = useState('')
+
+    const [error, setError] = useState<string | null>(null)
 
     // HOF higher order functions
     // Функции высшего порядка (HOF)
@@ -38,21 +48,29 @@ export const Todolist: React.FC<PropsType> = ({title, tasks, ...props}) => {
             ? <ul>
                 {
                     tasks.map(t =>
-                            <Task {...t} removeTask={props.removeTask} />)
+                        <Task {...t} removeTask={props.removeTask}
+                              changeTaskStatus={props.changeTaskStatus}/>)
                 }
             </ul>
             : <span>Your task list is empty</span>
 
 
-    const isAddButtonDisabled = !value
+    const isAddTaskPossible = !value
 
 
     const addTask = () => {
-        props.addTask(value)
+
+        if (value.trim()) {
+            props.addTask(value.trim())
+        } else {
+            setError('Please, enter text')
+        }
+
         setValue('')
+
     }
     const onClickAddTAskHandler = () => {
-        !isAddButtonDisabled &&
+        !isAddTaskPossible &&
         addTask()
     }
 
@@ -61,27 +79,41 @@ export const Todolist: React.FC<PropsType> = ({title, tasks, ...props}) => {
     }
 
     const onKeyDownSetValueHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-        e.key === 'Enter' && !isAddButtonDisabled && addTask()
+        error && setError(null)
+        e.key === 'Enter' && addTask()
     }
-
-
 
 
     return <div className="todolist">
         <h3>{title}</h3>
         <div>
-            <input value={value} onChange={onChangeSetValueHandler} onKeyDown={onKeyDownSetValueHandler}/>
-            <button onClick={onClickAddTAskHandler} disabled={isAddButtonDisabled}>+</button>
+            <input
+                value={value}
+                onChange={onChangeSetValueHandler}
+                onKeyDown={onKeyDownSetValueHandler}
+                className={error ? 'empty-value-error' : ''}
+            />
+            <button onClick={onClickAddTAskHandler} disabled={isAddTaskPossible}>+</button>
+            {error && <div className='error-message'>{error}</div>}
         </div>
-            {tasksList}
+        {tasksList}
         <div>
-            <button onClick={changeFilterOnClickHandlerCreator('all')}>
+            <button
+                className={filter === 'all' ? 'btn-filter-active' : 'btn-filter'}
+                onClick={changeFilterOnClickHandlerCreator('all')}
+            >
                 All
             </button>
-            <button onClick={changeFilterOnClickHandlerCreator('active')}>
+            <button
+                className={filter === 'active' ? 'btn-filter-active' : 'btn-filter'}
+                onClick={changeFilterOnClickHandlerCreator('active')}
+            >
                 Active
             </button>
-            <button onClick={changeFilterOnClickHandlerCreator('completed')}>
+            <button
+                className={filter === 'completed' ? 'btn-filter-active' : 'btn-filter'}
+                onClick={changeFilterOnClickHandlerCreator('completed')}
+            >
                 Completed
             </button>
         </div>
