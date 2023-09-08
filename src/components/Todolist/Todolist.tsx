@@ -66,17 +66,17 @@ export const Todolist = (props: PropsType) => {
             <div>
                 <Button
                     name="All"
-                    callback={onClickAllButtonHAndler}
+                    onClick={onClickAllButtonHAndler}
                     className={filter === 'all' ? 'active-filter' : ''}
                 />
                 <Button
                     name="Active"
-                    callback={onClickActiveButtonHAndler}
+                    onClick={onClickActiveButtonHAndler}
                     className={filter === 'active' ? 'active-filter' : ''}
                 />
                 <Button
                     name="Completed"
-                    callback={onClickCompletedButtonHAndler}
+                    onClick={onClickCompletedButtonHAndler}
                     className={filter === 'completed' ? 'active-filter' : ''}
                 />
             </div>

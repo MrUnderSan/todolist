@@ -48,7 +48,7 @@ export const TodolistInput: React.FC<PropsType> = (props) => {
                 onKeyDown={onKeyDownInputHandler}
                 className={error ? 'error' : ''}
             />
-            <Button name="+" callback={onClickButtonHandler} disabled={isButtonDisabled}/>
+            <Button name="+" onClick={onClickButtonHandler} disabled={isButtonDisabled}/>
             {error && <div className="error-message">{error}</div>}
         </div>
     )

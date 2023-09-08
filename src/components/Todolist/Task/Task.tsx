@@ -23,7 +23,7 @@ export const Task: React.FC<PropsType> = (
         <li key={task.id} className={task.isDone ? 'is-done' : ''}>
             <input type="checkbox" checked={task.isDone} onChange={onChangeCheckboxHandler}/>
             <span>{task.title}</span>
-            <Button name="X" callback={onClickButtonHandler}/>
+            <Button name="X" onClick={onClickButtonHandler}/>
         </li>
     );
 };
