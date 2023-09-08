@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useState, KeyboardEvent} from 'react';
-import {Button} from './components/Button';
-import {Input} from './components/Input';
+import {Button} from '../../Button/Button';
+import {Input} from '../../Input/Input';
 
 type PropsType = {
     addTask: (taskTitle: string) => void

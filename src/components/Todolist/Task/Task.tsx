@@ -1,5 +1,5 @@
 import React, {ChangeEvent} from 'react';
-import {Button} from './components/Button';
+import {Button} from '../../Button/Button';
 
 export type TaskType = {
     id: string

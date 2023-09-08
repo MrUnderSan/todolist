@@ -1,7 +1,7 @@
 import React, {ChangeEvent, useState} from 'react';
-import {Button} from './components/Button';
-import {TodolistInput} from './TodolistInput';
-import {Task, TaskType} from './Task';
+import {Button} from '../Button/Button';
+import {TodolistInput} from './TodolistInput/TodolistInput';
+import {Task, TaskType} from './Task/Task';
 
 type filterType = 'all' | 'active' | 'completed'
 
