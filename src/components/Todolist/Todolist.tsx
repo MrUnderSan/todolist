@@ -56,13 +56,17 @@ export const Todolist = (props: PropsType) => {
         changeFiler('completed')
     }
 
+    console.log(tasksList.length, Boolean(tasksList))
     return (
         <div>
             <h3>{props.title}</h3>
             <TodolistInput addTask={props.addTask} />
-            <ul>
-                {tasksList}
-            </ul>
+            {tasksList.length !== 0 ?
+                <ul>
+                    {tasksList}
+                </ul> :
+                <span>Yor task list is empty</span>
+            }
             <div>
                 <Button
                     name="All"
