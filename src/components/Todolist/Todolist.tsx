@@ -1,5 +1,6 @@
-import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
+import React, {ChangeEvent, FC} from 'react';
 import {FilterValuesType} from '../../App';
+import {AddItemForm} from '../AddItemForm/AddItemForm';
 
 export type TaskType = {
     id: string
@@ -23,59 +24,42 @@ type PropsType = {
     removeTodolist: (todolistId: string) => void
 }
 
-export function Todolist(props: PropsType) {
+export const Todolist: FC<PropsType> = (
+    {
+        id,
+        title,
+        tasks,
+        removeTask,
+        changeFilter,
+        addTask,
+        changeTaskStatus,
+        filter,
+        removeTodolist
+    }) => {
 
-    let [title, setTitle] = useState('')
-    let [error, setError] = useState<string | null>(null)
-
-    const addTask = () => {
-        if (title.trim() !== '') {
-            props.addTask(props.id, title.trim());
-
-        } else {
-            setError('Title is required');
-        }
-        setTitle('');
-    }
-
-    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setTitle(e.currentTarget.value)
-    }
-
-    const onKeyDownHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-        setError(null);
-        if (e.key === 'Enter') {
-            addTask();
-        }
-    }
-
-    const onAllClickHandler = () => props.changeFilter(props.id, 'all');
-    const onActiveClickHandler = () => props.changeFilter(props.id, 'active');
-    const onCompletedClickHandler = () => props.changeFilter(props.id, 'completed');
+    const onAllClickHandler = () => changeFilter(id, 'all');
+    const onActiveClickHandler = () => changeFilter(id, 'active');
+    const onCompletedClickHandler = () => changeFilter(id, 'completed');
 
     const removeTodolistHandler = () => {
-        props.removeTodolist(props.id)
+        removeTodolist(id)
     }
+
+    const addItemHandler = (title: string) => (
+        addTask(id, title)
+    )
 
     return (
         <div>
-            <h3 style={{display: "inline-block"}}>{props.title}</h3>
+            <h3 style={{display: 'inline-block'}}>{title}</h3>
             <button onClick={removeTodolistHandler}>x</button>
-            <div>
-                <input value={title}
-                       onChange={onChangeHandler}
-                       onKeyDown={onKeyDownHandler}
-                       className={error ? 'error' : ''}
-                />
-                <button onClick={addTask}>+</button>
-                {error && <div className="error-message">{error}</div>}
-            </div>
+            <AddItemForm addItem={addItemHandler}/>
             <ul>
                 {
-                    props.tasks.map(t => {
-                        const onClickHandler = () => props.removeTask(props.id, t.id)
+                    tasks.map(t => {
+                        const onClickHandler = () => removeTask(id, t.id)
                         const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-                            props.changeTaskStatus(props.id, t.id, e.currentTarget.checked);
+                            changeTaskStatus(id, t.id, e.currentTarget.checked);
                         }
 
                         return <li key={t.id} className={t.isDone ? 'is-done' : ''}>
@@ -89,13 +73,13 @@ export function Todolist(props: PropsType) {
                 }
             </ul>
             <div>
-                <button className={props.filter === 'all' ? 'active-filter' : ''}
+                <button className={filter === 'all' ? 'active-filter' : ''}
                         onClick={onAllClickHandler}>All
                 </button>
-                <button className={props.filter === 'active' ? 'active-filter' : ''}
+                <button className={filter === 'active' ? 'active-filter' : ''}
                         onClick={onActiveClickHandler}>Active
                 </button>
-                <button className={props.filter === 'completed' ? 'active-filter' : ''}
+                <button className={filter === 'completed' ? 'active-filter' : ''}
                         onClick={onCompletedClickHandler}>Completed
                 </button>
             </div>
