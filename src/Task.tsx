@@ -2,8 +2,8 @@ import React, {ChangeEvent} from 'react';
 import {TaskType} from './Todolist';
 
 type TaskPropsType = {
-    removeTask: (taskId: string) => void
-    changeTaskStatus: (taskId: string, taskStatus: boolean) => void
+    removeTask: () => void
+    changeTaskStatus: (taskStatus: boolean) => void
 } & TaskType
 
 export const Task: React.FC<TaskPropsType> = (
@@ -12,18 +12,18 @@ export const Task: React.FC<TaskPropsType> = (
         title,
         isDone,
         removeTask,
-        changeTaskStatus
+        changeTaskStatus,
+
     }) => {
 
-    const RemoveTaskHandler = () => removeTask(id)
 
-    const changeTaskStatusHandler = (e: ChangeEvent<HTMLInputElement>) => changeTaskStatus(id, e.currentTarget.checked)
+    const changeTaskStatusHandler = (e: ChangeEvent<HTMLInputElement>) => changeTaskStatus(e.currentTarget.checked)
 
     return (
         <li key={id} className={isDone ? 'task-done' : 'task'}>
             <input type="checkbox" onChange={changeTaskStatusHandler} checked={isDone}/>
             <span>{title}</span>
-            <button onClick={RemoveTaskHandler}>&times;</button>
+            <button onClick={removeTask}>&times;</button>
         </li>
     )
 }
