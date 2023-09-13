@@ -58,7 +58,7 @@ export const Todolist = (props: PropsType) => {
 
     console.log(tasksList.length, Boolean(tasksList))
     return (
-        <div>
+        <div className={'todolist'}>
             <h3>{props.title}</h3>
             <TodolistInput addTask={props.addTask} />
             {tasksList.length !== 0 ?

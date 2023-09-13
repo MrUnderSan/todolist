@@ -7,6 +7,12 @@
   margin-right: 50px;
 }
 
+.todolist {
+  border: 3px solid #8edff7;
+  border-radius: 10px;
+  padding: 20px;
+}
+
 .error {
   border: 1px solid red;
 }
