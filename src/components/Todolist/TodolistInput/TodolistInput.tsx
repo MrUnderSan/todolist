@@ -1,10 +1,9 @@
-import React, {ChangeEvent, useState, KeyboardEvent} from 'react';
+import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import {Button} from '../../Button/Button';
 import {Input} from '../../Input/Input';
 
 type PropsType = {
     addTask: (taskTitle: string) => void
-
 }
 
 export const TodolistInput: React.FC<PropsType> = (props) => {

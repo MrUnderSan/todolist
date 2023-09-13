@@ -1,66 +1,86 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, FC} from 'react';
 import {Button} from '../Button/Button';
 import {TodolistInput} from './TodolistInput/TodolistInput';
 import {Task, TaskType} from './Task/Task';
 
-type filterType = 'all' | 'active' | 'completed'
+export type FilterType = 'all' | 'active' | 'completed'
 
 type PropsType = {
+    todolistId: string
     title: string
+    filter: FilterType
     tasks: TaskType[]
-    removeTask: (id: string) => void
-    addTask: (taskTitle: string) => void
-    changeTaskStatus: (taskId: string, isDone: boolean) => void
+    removeTask: (todolistId: string, taskId: string) => void
+    addTask: (todolistId: string, taskTitle: string) => void
+    changeTaskStatus: (todolistId: string, taskId: string, isDone: boolean) => void
+    changeFilter: (todolistId: string, filter: FilterType) => void
+    removeTodolist: (todolistId: string) => void
 }
 
-export const Todolist = (props: PropsType) => {
+export const Todolist: FC<PropsType> = ({
+                                            todolistId,
+                                            title,
+                                            filter,
+                                            tasks,
+                                            removeTask,
+                                            addTask,
+                                            changeTaskStatus,
+                                            changeFilter,
+                                            removeTodolist
+                                        }) => {
 
-    const [filter, setFilter] = useState<filterType>('all')
-
-    const changeFiler = (filter: filterType) => {
-        setFilter(filter)
-    }
     const filterTasks = () => {
         switch (filter) {
             case 'active':
-                return props.tasks.filter(t => !t.isDone)
+                return tasks.filter(t => !t.isDone)
             case 'completed':
-                return props.tasks.filter(t => t.isDone)
+                return tasks.filter(t => t.isDone)
             default:
-                return props.tasks
+                return tasks
         }
     }
 
+    const onClickAllButtonHAndler = () => {
+        changeFilter(todolistId, 'all')
+    }
+    const onClickActiveButtonHAndler = () => {
+        changeFilter(todolistId, 'active')
+    }
+    const onClickCompletedButtonHAndler = () => {
+        changeFilter(todolistId, 'completed')
+    }
+
+    const addTaskCallback = (taskTitle: string) => {
+        addTask(todolistId, taskTitle)
+    }
+
+    const removeTodolistHandler = () => {
+        removeTodolist(todolistId)
+    }
 
     const tasksList = filterTasks().map(t => {
         const onClickButtonHandler = () => {
-            props.removeTask(t.id)
+            removeTask(todolistId, t.id)
         }
 
         const onChangeCheckboxHandler = (e: ChangeEvent<HTMLInputElement>) => {
-            props.changeTaskStatus(t.id, e.currentTarget.checked)
+            changeTaskStatus(todolistId, t.id, e.currentTarget.checked)
         }
 
         return (
-            <Task task={t} onChangeCheckboxHandler={onChangeCheckboxHandler} onClickButtonHandler={onClickButtonHandler} />
+            <Task
+                key={t.id}
+                task={t}
+                onChangeCheckboxHandler={onChangeCheckboxHandler}
+                onClickButtonHandler={onClickButtonHandler}/>
         )
     })
 
-    const onClickAllButtonHAndler = () => {
-        changeFiler('all')
-    }
-    const onClickActiveButtonHAndler = () => {
-        changeFiler('active')
-    }
-    const onClickCompletedButtonHAndler = () => {
-        changeFiler('completed')
-    }
-
-    console.log(tasksList.length, Boolean(tasksList))
     return (
         <div className={'todolist'}>
-            <h3>{props.title}</h3>
-            <TodolistInput addTask={props.addTask} />
+            <Button name={'X'} onClick={removeTodolistHandler}/>
+            <h3>{title}</h3>
+            <TodolistInput addTask={addTaskCallback}/>
             {tasksList.length !== 0 ?
                 <ul>
                     {tasksList}
