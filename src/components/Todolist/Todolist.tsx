@@ -1,7 +1,7 @@
 import React, {ChangeEvent, FC} from 'react';
 import {Button} from '../Button/Button';
-import {TodolistInput} from './TodolistInput/TodolistInput';
 import {Task, TaskType} from './Task/Task';
+import {AddItemForm} from '../AddItemForm/AddItemForm';
 
 export type FilterType = 'all' | 'active' | 'completed'
 
@@ -50,7 +50,7 @@ export const Todolist: FC<PropsType> = ({
         changeFilter(todolistId, 'completed')
     }
 
-    const addTaskCallback = (taskTitle: string) => {
+    const addTaskHandler = (taskTitle: string) => {
         addTask(todolistId, taskTitle)
     }
 
@@ -80,7 +80,7 @@ export const Todolist: FC<PropsType> = ({
         <div className={'todolist'}>
             <Button name={'X'} onClick={removeTodolistHandler}/>
             <h3>{title}</h3>
-            <TodolistInput addTask={addTaskCallback}/>
+            <AddItemForm addItem={addTaskHandler}/>
             {tasksList.length !== 0 ?
                 <ul>
                     {tasksList}

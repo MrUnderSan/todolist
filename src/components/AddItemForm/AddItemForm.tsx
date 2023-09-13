@@ -1,12 +1,12 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
-import {Button} from '../../Button/Button';
-import {Input} from '../../Input/Input';
+import {Button} from '../Button/Button';
+import {Input} from '../Input/Input';
 
 type PropsType = {
-    addTask: (taskTitle: string) => void
+    addItem: (title: string) => void
 }
 
-export const TodolistInput: React.FC<PropsType> = (props) => {
+export const AddItemForm: React.FC<PropsType> = ({addItem}) => {
 
     const [value, setValue] = useState('')
 
@@ -20,7 +20,7 @@ export const TodolistInput: React.FC<PropsType> = (props) => {
 
     const addTask = () => {
         if (value.trim() !== '') {
-            props.addTask(value)
+            addItem(value)
         } else {
             setError('Title is required')
         }

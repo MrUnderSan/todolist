@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { TodolistInput } from './TodolistInput';
+import { AddItemForm } from './AddItemForm';
 import {func} from 'prop-types';
-import '../../../App.css';
+import '../../App.css';
 
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-const meta: Meta<typeof TodolistInput> = {
+const meta: Meta<typeof AddItemForm> = {
   title: 'UI/Todolist Input',
-  component: TodolistInput,
+  component: AddItemForm,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
@@ -17,16 +17,16 @@ const meta: Meta<typeof TodolistInput> = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    addTask: func
+    addItem: func
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof TodolistInput>;
+type Story = StoryObj<typeof AddItemForm>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const ClearInput: Story = {
   args: {
-    addTask: ()=>{}
+    addItem: ()=>{}
   }
 };
