@@ -1,6 +1,8 @@
-import React, {ChangeEvent, useState, KeyboardEvent} from 'react';
+import React from 'react';
 import {FilterValuesType} from './App';
 import {Task} from './Task';
+import {AddItemForm} from './components/AddItemForm';
+import {EditableSpan} from './components/EditableSpan';
 
 export type TaskType = {
     id: string
@@ -18,6 +20,8 @@ type PropsType = {
     addTask: (todolistId: string, title: string) => void
     changeTaskStatus: (todolistId: string, taskId: string, taskStatus: boolean) => void
     removeTodolist: (todolistId: string) => void
+    changeTaskTitle: (todolistId: string, taskId: string, title: string) => void
+    editTodolistTitle: (title: string) => void
 }
 
 export const Todolist: React.FC<PropsType> = (
@@ -30,15 +34,15 @@ export const Todolist: React.FC<PropsType> = (
         changeFilter,
         addTask,
         changeTaskStatus,
-        removeTodolist
+        removeTodolist,
+        changeTaskTitle,
+        editTodolistTitle
     }) => {
 
     // const title = props.title
     // const {title} = props
 
-    const [value, setValue] = useState('')
 
-    const [error, setError] = useState<string | null>(null)
 
     // HOF higher order functions
     // Функции высшего порядка (HOF)
@@ -60,12 +64,17 @@ export const Todolist: React.FC<PropsType> = (
                     const changeTaskStatusCallback = (isDone: boolean) => {
                         changeTaskStatus(todolistId, t.id, isDone)
                     }
+                    const changeTaskTitleCallback = (title: string) => {
+                        changeTaskTitle(todolistId, t.id, title)
+                    }
+
                     return (
                         <Task
                             key={t.id}
                             {...t}
                             removeTask={removeTaskCallback}
                             changeTaskStatus={changeTaskStatusCallback}
+                            changeTaskTitle={changeTaskTitleCallback}
                         />
                     )
                 })}
@@ -73,53 +82,20 @@ export const Todolist: React.FC<PropsType> = (
             : <span>Your task list is empty</span>
 
 
-    const isAddTaskPossible = !value
-
-
-    const addTaskHandler = () => {
-
-        if (value.trim()) {
-            addTask(todolistId, value.trim())
-        } else {
-            setError('Please, enter text')
-        }
-
-        setValue('')
-
-    }
-    const onClickAddTAskHandler = () => {
-        !isAddTaskPossible &&
-        addTaskHandler()
-    }
-
-    const onChangeSetValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setValue(e.currentTarget.value)
-    }
-
-    const onKeyDownSetValueHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-        error && setError(null)
-        e.key === 'Enter' && addTaskHandler()
-    }
-
     const removeTodolistHandler = () => {
         removeTodolist(todolistId)
+    }
+
+    const addTaskHandler = (title: string) => {
+        addTask(todolistId, title)
     }
 
     return <div className="todolist">
         <div>
             <button onClick={removeTodolistHandler}>x</button>
-            <h3>{title}</h3>
+            <EditableSpan title={title} callback={editTodolistTitle} />
         </div>
-        <div>
-            <input
-                value={value}
-                onChange={onChangeSetValueHandler}
-                onKeyDown={onKeyDownSetValueHandler}
-                className={error ? 'empty-value-error' : ''}
-            />
-            <button onClick={onClickAddTAskHandler} disabled={isAddTaskPossible}>+</button>
-            {error && <div className="error-message">{error}</div>}
-        </div>
+        <AddItemForm callback={addTaskHandler} />
         {tasksList}
         <div>
             <button

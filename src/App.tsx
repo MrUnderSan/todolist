@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import {TaskType, Todolist} from './Todolist';
+import {AddItemForm} from './components/AddItemForm';
 
 export type FilterValuesType = 'all' | 'active' | 'completed';
 
@@ -65,8 +66,8 @@ function App() {
         setTodolist(todolist.map(t => t.todolistId === todolistId ? {...t, filter} : t))
     }
 
-    const changeTaskTitle = (todolistId: string, title: string) => {
-        setTodolist(todolist.map(t => t.todolistId === todolistId ? {...t, title} : t))
+    const changeTaskTitle = (todolistId: string, taskId: string, title: string) => {
+        setTasks({...tasks, [todolistId]: tasks[todolistId].map(t=> t.id === taskId ? {...t, title} : t) })
     }
 
     const removeTodolist = (todolistId: string) => {
@@ -85,9 +86,17 @@ function App() {
         }
     }
 
+    const editTodolistTitle = (todolistId: string, title: string) => {
+        setTodolist(todolist.map(tl=> tl.todolistId === todolistId ? {...tl, todolistTitle: title} : tl))
+    }
+
     const todolistComponents: JSX.Element[] = todolist.map(t => {
 
         const tasksForTodolist: TaskType[] = getTaskForRender(tasks[t.todolistId], t.filter)
+
+        const editTodolistTitleHandler = (title: string) => {
+            editTodolistTitle(t.todolistId, title)
+        }
 
         return (
             <Todolist
@@ -101,14 +110,23 @@ function App() {
                 addTask={addTask}
                 changeTaskStatus={changeTaskStatus}
                 removeTodolist={removeTodolist}
+                changeTaskTitle={changeTaskTitle}
+                editTodolistTitle={editTodolistTitleHandler}
             />
         );
     })
+
+    const addTodolist = (tittle: string) => {
+        let newTodolist: TodolistType = {todolistId: crypto.randomUUID(), todolistTitle: tittle, filter: 'all'}
+        setTodolist([newTodolist, ...todolist])
+        setTasks({...tasks, [newTodolist.todolistId]: []})
+    }
 
     // UI
 
     return (
         <div className="App">
+            <AddItemForm callback={addTodolist}/>
             {todolistComponents}
         </div>
     );
