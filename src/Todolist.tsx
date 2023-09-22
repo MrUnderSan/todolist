@@ -2,8 +2,10 @@ import React, {ChangeEvent} from 'react';
 import {FilterValuesType} from './App';
 import {AddItemForm} from './AddItemForm';
 import {EditableSpan} from './EditableSpan';
-import {Button, Checkbox, IconButton} from '@mui/material';
-import {Delete} from '@mui/icons-material';
+import IconButton from '@mui/material/IconButton/IconButton';
+import {Delete} from "@mui/icons-material";
+import {Button, Checkbox} from "@mui/material";
+
 
 export type TaskType = {
     id: string
@@ -63,15 +65,13 @@ export function Todolist(props: PropsType) {
 
                     return <div key={t.id} className={t.isDone ? "is-done" : ""}>
                         <Checkbox
-                            onChange={onChangeHandler}
                             checked={t.isDone}
-                            color={'primary'}
+                            color="primary"
+                            onChange={onChangeHandler}
                         />
+
                         <EditableSpan value={t.title} onChange={onTitleChangeHandler} />
-                        <IconButton
-                            onClick={onClickHandler}
-                            size={'small'}
-                        >
+                        <IconButton onClick={onClickHandler}>
                             <Delete />
                         </IconButton>
                     </div>
@@ -82,20 +82,15 @@ export function Todolist(props: PropsType) {
             <Button variant={props.filter === 'all' ? 'outlined' : 'text'}
                     onClick={onAllClickHandler}
                     color={'inherit'}
-                    size={'small'}
             >All
             </Button>
             <Button variant={props.filter === 'active' ? 'outlined' : 'text'}
                     onClick={onActiveClickHandler}
-                    color={'primary'}
-                    size={'small'}
-            >Active
+                    color={'primary'}>Active
             </Button>
             <Button variant={props.filter === 'completed' ? 'outlined' : 'text'}
                     onClick={onCompletedClickHandler}
-                    color={'secondary'}
-                    size={'small'}
-            >Completed
+                    color={'secondary'}>Completed
             </Button>
         </div>
     </div>
