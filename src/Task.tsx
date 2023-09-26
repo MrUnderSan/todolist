@@ -1,6 +1,9 @@
 import React, {ChangeEvent} from 'react';
 import {TaskType} from './Todolist';
 import {EditableSpan} from './components/EditableSpan';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+import Checkbox from '@mui/material/Checkbox';
 
 type TaskPropsType = {
     removeTask: () => void
@@ -23,9 +26,18 @@ export const Task: React.FC<TaskPropsType> = (
 
     return (
         <li key={id} className={isDone ? 'task-done' : 'task'}>
-            <input type="checkbox" onChange={changeTaskStatusHandler} checked={isDone}/>
+            <Checkbox
+                onChange={changeTaskStatusHandler}
+                checked={isDone}
+            />
             <EditableSpan title={title} callback={changeTaskTitle} />
-            <button onClick={removeTask}>&times;</button>
+            <IconButton
+                aria-label="delete"
+                onClick={removeTask}
+                size={'small'}
+            >
+                <DeleteIcon />
+            </IconButton>
         </li>
     )
 }

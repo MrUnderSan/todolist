@@ -3,6 +3,9 @@ import {FilterValuesType} from './App';
 import {Task} from './Task';
 import {AddItemForm} from './components/AddItemForm';
 import {EditableSpan} from './components/EditableSpan';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+import Button from '@mui/material/Button';
 
 export type TaskType = {
     id: string
@@ -92,30 +95,43 @@ export const Todolist: React.FC<PropsType> = (
 
     return <div className="todolist">
         <div>
-            <button onClick={removeTodolistHandler}>x</button>
             <EditableSpan title={title} callback={editTodolistTitle} />
+            <IconButton
+                aria-label="delete"
+                onClick={removeTodolistHandler}
+                size={'small'}
+            >
+                <DeleteIcon />
+            </IconButton>
         </div>
         <AddItemForm callback={addTaskHandler} />
         {tasksList}
         <div>
-            <button
-                className={filter === 'all' ? 'btn-filter-active' : 'btn-filter'}
+            <Button
+                variant={filter === 'all' ? 'outlined' : 'contained'}
+                color="success"
                 onClick={changeFilterOnClickHandlerCreator('all')}
+                size={'small'}
             >
                 All
-            </button>
-            <button
-                className={filter === 'active' ? 'btn-filter-active' : 'btn-filter'}
+            </Button>
+            <Button
+                variant={filter === 'active' ? 'outlined' : 'contained'}
+                color="error"
                 onClick={changeFilterOnClickHandlerCreator('active')}
+                size={'small'}
             >
                 Active
-            </button>
-            <button
-                className={filter === 'completed' ? 'btn-filter-active' : 'btn-filter'}
+            </Button>
+            <Button
+                variant={filter === 'completed' ? 'outlined' : 'contained'}
+                color="secondary"
                 onClick={changeFilterOnClickHandlerCreator('completed')}
+                size={'small'}
             >
                 Completed
-            </button>
+            </Button>
+
         </div>
     </div>
 }

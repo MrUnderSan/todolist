@@ -2,6 +2,10 @@ import React, {useState} from 'react';
 import './App.css';
 import {TaskType, Todolist} from './Todolist';
 import {AddItemForm} from './components/AddItemForm';
+import ButtonAppBar from './ButtonAppBar';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
 
 export type FilterValuesType = 'all' | 'active' | 'completed';
 
@@ -67,7 +71,7 @@ function App() {
     }
 
     const changeTaskTitle = (todolistId: string, taskId: string, title: string) => {
-        setTasks({...tasks, [todolistId]: tasks[todolistId].map(t=> t.id === taskId ? {...t, title} : t) })
+        setTasks({...tasks, [todolistId]: tasks[todolistId].map(t => t.id === taskId ? {...t, title} : t)})
     }
 
     const removeTodolist = (todolistId: string) => {
@@ -87,7 +91,7 @@ function App() {
     }
 
     const editTodolistTitle = (todolistId: string, title: string) => {
-        setTodolist(todolist.map(tl=> tl.todolistId === todolistId ? {...tl, todolistTitle: title} : tl))
+        setTodolist(todolist.map(tl => tl.todolistId === todolistId ? {...tl, todolistTitle: title} : tl))
     }
 
     const todolistComponents: JSX.Element[] = todolist.map(t => {
@@ -99,20 +103,24 @@ function App() {
         }
 
         return (
-            <Todolist
-                key={t.todolistId}
-                todolistId={t.todolistId}
-                title={t.todolistTitle}
-                filter={t.filter}
-                tasks={tasksForTodolist}
-                removeTask={removeTask}
-                changeFilter={changeFilter}
-                addTask={addTask}
-                changeTaskStatus={changeTaskStatus}
-                removeTodolist={removeTodolist}
-                changeTaskTitle={changeTaskTitle}
-                editTodolistTitle={editTodolistTitleHandler}
-            />
+            <Grid item key={t.todolistId}>
+                <Paper style={{padding: '10px', backgroundColor: 'darkseagreen'}} elevation={3}>
+                    <Todolist
+
+                        todolistId={t.todolistId}
+                        title={t.todolistTitle}
+                        filter={t.filter}
+                        tasks={tasksForTodolist}
+                        removeTask={removeTask}
+                        changeFilter={changeFilter}
+                        addTask={addTask}
+                        changeTaskStatus={changeTaskStatus}
+                        removeTodolist={removeTodolist}
+                        changeTaskTitle={changeTaskTitle}
+                        editTodolistTitle={editTodolistTitleHandler}
+                    />
+                </Paper>
+            </Grid>
         );
     })
 
@@ -126,9 +134,17 @@ function App() {
 
     return (
         <div className="App">
-            <AddItemForm callback={addTodolist}/>
-            {todolistComponents}
+            <ButtonAppBar/>
+            <Container>
+                <Grid container style={{padding: '10px 0'}}>
+                    <AddItemForm callback={addTodolist}/>
+                </Grid>
+                <Grid container spacing={3}>
+                    {todolistComponents}
+                </Grid>
+            </Container>
         </div>
+
     );
 }
 

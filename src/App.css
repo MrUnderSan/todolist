@@ -1,12 +1,6 @@
 
 .App {
-  padding: 30px;
-  display: flex;
-  background-color: beige;
-}
 
-.App > div {
-  margin-right: 50px;
 }
 
 .error {
@@ -26,7 +20,6 @@
 }
 
 .todolist {
-  background-color: darkseagreen;
   padding: 15px;
   border-radius: 5px;
   min-height: 300px;
