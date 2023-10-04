@@ -4,11 +4,11 @@ export const dataState: DataStateType = {
             {
                 heading: "Цикл while",
                 about: " Цикл while имеет следующий синтаксис: ",
-            },
+            },//0
             {
                 heading: "Цикл for",
                 about: " Цикл for имеет следующий синтаксис: ",
-            },
+            },//1
             {
                 heading: "Конструкция \"switch\"",
                 about: " Конструкция switch заменяет собой сразу несколько if.",

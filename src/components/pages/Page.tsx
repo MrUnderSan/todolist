@@ -1,34 +1,43 @@
 import React from 'react';
-import {PagesType} from '../../data/dataState';
-import {useLocation, useParams} from 'react-router-dom';
-import {Error404} from './Error404';
+import {useLocation, useNavigate, useParams} from "react-router-dom";
+import {PagesType} from "./../../data/dataState";
+import {Error404} from "./Error404";
 
 type PropsType = {
     pages: PagesType[]
 }
 
-export const Page = (props: PropsType) => {
+export const Page: React.FC<PropsType> = ({pages}) => {
     const params = useParams()
-    const currentID = Number(params.id)
+    const locale=useLocation()
+    console.log(locale.pathname)
 
-    const locale = useLocation()
+    const navigate = useNavigate()
+
+    const backHandler = () => {
+        navigate(-1)
+    }
+    const mainHandler = () => {
+        navigate('/page/0')
+    }
 
     return (
-        <div>
-            {locale.pathname==='/page/0' && <div>SECRET TEXT</div>}
-            {props.pages[currentID]
-                ?
-                <div>
+        <>
+            {locale.pathname==='/page/0'&& <div>SECRET TEXT</div>}
+            {pages[Number(params.id)]
+                ? <div>
                     <div>
-                        {props.pages[currentID].heading}
+                        {pages[Number(params.id)].heading}
                     </div>
                     <div>
-                        {props.pages[currentID].about}
+                        {pages[Number(params.id)].about}
                     </div>
                 </div>
                 : <Error404/>
             }
-
-        </div>
+            <button onClick={backHandler}>back</button>
+            <button onClick={mainHandler}>main page</button>
+        </>
     );
 };
+
