@@ -1,6 +1,11 @@
-
+/*
 .App {
+  padding: 30px;
+  display: flex;
+}
 
+.App > div {
+  margin-right: 50px;
 }
 
 .error {
@@ -18,37 +23,4 @@
 .is-done {
   opacity: 0.5;
 }
-
-.todolist {
-  padding: 15px;
-  border-radius: 5px;
-  min-height: 300px;
-}
-
-.task {
-  font-weight: bold;
-}
-
-.task-done {
-  opacity: 0.5;
-  text-decoration: line-through;
-}
-
-.btn-filter {
-  background-color: teal;
-  border-radius: 3px;
-  border-color: teal;
-}
-
-.btn-filter-active {
-  background-color: coral;
-  color: white;
-  border-radius: 3px;
-  border-color: coral;
-
-}
-
-.empty-value-error {
-  border: 2px solid red;
-  outline: none;
-}
+*/
