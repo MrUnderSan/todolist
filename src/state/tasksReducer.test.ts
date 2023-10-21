@@ -1,4 +1,4 @@
-import {addTaskAC, changeTaskStatusAC, removeTaskAC, tasksReducer, TasksType} from './tasksReducer';
+import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC, tasksReducer, TasksType} from './tasksReducer';
 import {v1} from 'uuid';
 
 let todolistId1: string
@@ -56,5 +56,16 @@ test('task status should be changed in correct task in correct todolist', () => 
     expect(tasks[todolistId2][2].isDone).toBeFalsy()
     expect(endState[todolistId1][2].isDone).toBeTruthy()
     expect(endState[todolistId2][2].isDone).toBeFalsy()
+
+})
+test('task title should be changed in correct task in correct todolist', () => {
+    const action = changeTaskTitleAC(todolistId1, '3', 'Vue')
+
+    const endState = tasksReducer(tasks, action)
+
+    expect(tasks[todolistId1][2].title).toBe('React')
+    expect(tasks[todolistId2][2].title).toBe('Nuts')
+    expect(endState[todolistId1][2].title).toBe('Vue')
+    expect(endState[todolistId2][2].title).toBe('Nuts')
 
 })
