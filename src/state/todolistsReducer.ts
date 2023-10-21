@@ -8,8 +8,8 @@ export type TodolistType = {
     filter: FilterType
 }
 
-type AddTodolistActionType = ReturnType<typeof addTodolistAC>
-type RemoveTodolistActionType = ReturnType<typeof removeTodolistAC>
+export type AddTodolistActionType = ReturnType<typeof addTodolistAC>
+export type RemoveTodolistActionType = ReturnType<typeof removeTodolistAC>
 type ChangeFilterActionType = ReturnType<typeof changeFilterAC>
 type ChangeTodolistTitleActionType = ReturnType<typeof changeTodolistTitleAC>
 
