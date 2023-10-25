@@ -1,10 +1,9 @@
-import React, {useEffect, useLayoutEffect, useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {TaskType, Todolist} from './Todolist';
 import {v1} from 'uuid';
 import {AddItemForm} from './AddItemForm';
-import {AppBar, Button, Container, Grid, Paper, Toolbar, Typography} from "@mui/material";
-import IconButton from "@mui/material/IconButton/IconButton";
+import {AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography} from "@mui/material";
 import {Menu} from "@mui/icons-material";
 
 
@@ -39,7 +38,6 @@ function App() {
             {id: v1(), title: "React Book", isDone: true}
         ]
     });
-
 
     function removeTask(id: string, todolistId: string) {
         //достанем нужный массив по todolistId:
@@ -85,7 +83,6 @@ function App() {
             setTasks({...tasks});
         }
     }
-
 
     function changeFilter(value: FilterValuesType, todolistId: string) {
         let todolist = todolists.find(tl => tl.id === todolistId);
@@ -176,61 +173,8 @@ function App() {
                     }
                 </Grid>
             </Container>
-            {/*<FunctionComp />*/}
-            {/*<ClassComp />*/}
         </div>
     );
 }
 
 export default App;
-
-const FunctionComp = () => {
-    const [size, setSize] = useState(10)
-
-    useLayoutEffect(() => {
-        let start = new Date().getTime();
-        let end = start;
-        while (end < start + 3000) {
-            end = new Date().getTime();
-        }
-        setSize(100)
-    })
-
-    useEffect(() => {
-        let start = new Date().getTime();
-        let end = start;
-        while (end < start + 3000) {
-            end = new Date().getTime();
-        }
-        setSize(10)
-    }, [])
-
-    return <div style={{fontSize: size}}>FunctionComp</div>
-}
-
-class ClassComp extends React.Component<{}, {size: number}> {
-    constructor(props: {}) {
-        super(props);
-        this.state = {
-            size: 10
-        }
-    }
-
-    sleep(duration: number) {
-        const start = new Date().getTime();
-        let end = start;
-
-        while(end < start + duration) {
-            end = new Date().getTime();
-        }
-    }
-
-    componentDidMount() {
-        this.sleep(3000);
-        this.setState({size: 100})
-    }
-
-    render() {
-        return <div style={{fontSize: this.state.size}}>ClassComp</div>;
-    }
-}
