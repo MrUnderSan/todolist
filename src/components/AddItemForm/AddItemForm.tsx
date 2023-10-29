@@ -1,23 +1,24 @@
+import TextField from '@mui/material/TextField/TextField';
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
-import {IconButton, TextField} from '@mui/material';
-import {AddBox} from '@mui/icons-material';
+import {IconButton} from "@mui/material";
+import {AddBox} from "@mui/icons-material";
+
 
 type AddItemFormPropsType = {
     addItem: (title: string) => void
 }
 
-export const AddItemForm = React.memo((props: AddItemFormPropsType) => {
-    console.log('AddItemForm')
+export const AddItemForm = React.memo( (props: AddItemFormPropsType) => {
 
-    let [title, setTitle] = useState('')
+    let [title, setTitle] = useState("")
     let [error, setError] = useState<string | null>(null)
 
     const addItem = () => {
-        if (title.trim() !== '') {
+        if (title.trim() !== "") {
             props.addItem(title);
-            setTitle('');
+            setTitle("");
         } else {
-            setError('Title is required');
+            setError("Title is required");
         }
     }
 
@@ -26,8 +27,12 @@ export const AddItemForm = React.memo((props: AddItemFormPropsType) => {
     }
 
     const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-        error !== null && setError(null)
-        e.key === 'Enter' && addItem()
+        if (error !== null) {
+            setError(null);
+        }
+        if (e.charCode === 13) {
+            addItem();
+        }
     }
 
     return <div>
@@ -35,12 +40,12 @@ export const AddItemForm = React.memo((props: AddItemFormPropsType) => {
                    error={!!error}
                    value={title}
                    onChange={onChangeHandler}
-                   onKeyDown={onKeyPressHandler}
+                   onKeyPress={onKeyPressHandler}
                    label="Title"
                    helperText={error}
         />
         <IconButton color="primary" onClick={addItem}>
-            <AddBox/>
+            <AddBox />
         </IconButton>
     </div>
-})
+} );
