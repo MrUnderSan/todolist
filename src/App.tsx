@@ -1,30 +1,33 @@
-import React from 'react';
-import {Task_3} from './task_3/Task_3';
-import {SlowComponent} from './task_3/slowComponent/SlowComponent';
+import React, {useEffect} from 'react';
+import './App.css';
+import {useAppDispatch, useAppSelector} from './hooks/hooks';
+import {Todos} from './Todos';
+import {getTodolistsTC} from './reducers/TodolistReducer';
 
-export type UserType = {
-    [key: string]: { name: string, id: string }
-};
 
-const DATA_7: UserType[] = [
-    {u1: {name: 'Gleb', id: '1'}},
-    {u2: {name: 'Dima', id: '2'}},
-    {u3: {name: 'Svetlana', id: '3'}},
-    {u4: {name: 'Artur', id: '4'}},
-    {u5: {name: 'Vera', id: '5'}},
-    {u6: {name: 'Vlad', id: '6'}},
-];
+function App() {
 
-export const App = () => {
+    const todos = useAppSelector(state => state.todos)
+    const dispatch = useAppDispatch()
 
-    console.log('App')
+    useEffect(() => {
+        dispatch(getTodolistsTC())
+    }, [])
 
     return (
-        <>
-            <Task_3>
-                <SlowComponent/>
-            </Task_3>
-            <hr/>
-        </>
+        <div className="App">
+            {todos.map(el => {
+                return (
+                    <Todos
+                        key={el.id}
+                        todolistId={el.id}
+                        title={el.title}
+                        filter={el.filter}
+                    />
+                )
+            })}
+        </div>
     );
-};
+}
+
+export default App;
