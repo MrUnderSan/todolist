@@ -1,15 +1,19 @@
-/*
 .App {
   padding: 30px;
-  display: flex;
 }
 
 .App > div {
   margin-right: 50px;
 }
 
+.todolist {
+  border: 3px solid #8edff7;
+  border-radius: 10px;
+  padding: 20px;
+}
+
 .error {
-  border: red 1px solid;
+  border: 1px solid red;
 }
 
 .error-message {
@@ -23,4 +27,10 @@
 .is-done {
   opacity: 0.5;
 }
-*/
+
+.todolists-wrapper {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
