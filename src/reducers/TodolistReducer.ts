@@ -1,5 +1,6 @@
 import {todolistsApi, TodolistType} from '../api/todolistsApi';
-import {Dispatch} from 'redux';
+import {AppDispatch, AppThunk} from '../store/store';
+import {getTasksTC} from './TasksReducer';
 
 type InitialType = TodolistType & {
     filter: string
@@ -30,10 +31,12 @@ const getTodolistsAC = (data: TodolistType[]) => {
     }
 }
 
-export const getTodolistsTC = () => async (dispatch: Dispatch) => {
+export const getTodolistsTC = (): AppThunk => async (dispatch: AppDispatch) => {
     try {
+        console.log('getTodolistsTC')
         const result = await todolistsApi.getTodolists()
         dispatch(getTodolistsAC(result.data))
+        result.data.map(t => dispatch(getTasksTC(t.id)))
     } catch (e) {
         console.log(e)
     }
