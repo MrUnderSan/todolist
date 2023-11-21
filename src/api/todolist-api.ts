@@ -7,11 +7,11 @@ const axiosInstance  = axios.create({
 
 export class TodolistAPI {
     static getTodos() {
-        return axiosInstance.get<TodolistType[]>('todo-lists');
+        return axiosInstance.get<TodolistDomainType[]>('todo-lists');
     }
 
     static createTodo(title: string) {
-        return axiosInstance.post<ResponseType<{ item: TodolistType }>>('todo-lists', { title });
+        return axiosInstance.post<ResponseType<{ item: TodolistDomainType }>>('todo-lists', { title });
     }
 
     static deleteTodo(id: string) {
@@ -23,11 +23,11 @@ export class TodolistAPI {
     }
 }
 
-type TodolistType = {
+export type TodolistDomainType = {
     id: string
     title: string
-    order: number
-    addedDate: Date
+    order?: number
+    addedDate?: Date
 }
 
 type ResponseType<D = {}> = {

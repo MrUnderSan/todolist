@@ -1,8 +1,11 @@
-import React, {ChangeEvent, FC} from 'react';
+import React, {ChangeEvent, FC, useEffect} from 'react';
 import {Button} from '../Button/Button';
-import {Task, TaskType} from './Task/Task';
+import {Task} from './Task/Task';
 import {AddItemForm} from '../AddItemForm/AddItemForm';
 import {EditableSpan} from '../EditableSpan/EditableSpan';
+import {useAppDispatch, useAppSelector} from '../../state/store';
+import {TodolistType} from '../../state/todolistsReducer';
+import {setTasks, TaskType} from '../../state/tasksReducer';
 
 export type FilterType = 'all' | 'active' | 'completed'
 
@@ -10,7 +13,6 @@ type PropsType = {
     todolistId: string
     title: string
     filter: FilterType
-    tasks: TaskType[]
     removeTask: (todolistId: string, taskId: string) => void
     addTask: (todolistId: string, taskTitle: string) => void
     changeTaskStatus: (todolistId: string, taskId: string, isDone: boolean) => void
@@ -24,7 +26,6 @@ export const Todolist: FC<PropsType> = ({
                                             todolistId,
                                             title,
                                             filter,
-                                            tasks,
                                             removeTask,
                                             addTask,
                                             changeTaskStatus,
@@ -33,6 +34,13 @@ export const Todolist: FC<PropsType> = ({
                                             changeTaskTitle,
                                             changeTodolistTitle
                                         }) => {
+
+    const dispatch = useAppDispatch()
+    const tasks = useAppSelector<TaskType[]>(state => state.tasks[todolistId])
+
+    useEffect(() => {
+        dispatch(setTasks(todolistId))
+    }, []);
 
     const filterTasks = () => {
         switch (filter) {
@@ -67,7 +75,7 @@ export const Todolist: FC<PropsType> = ({
         changeTodolistTitle(todolistId, title)
     }
 
-    const tasksList = filterTasks().map(t => {
+    const tasksList = filterTasks()?.map(t => {
         const onClickButtonHandler = () => {
             removeTask(todolistId, t.id)
         }

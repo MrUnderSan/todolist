@@ -25,7 +25,7 @@ beforeEach(() => {
 })
 
 test('correct task should be added in correct todolist', () => {
-    const action = addTaskAC(todolistId1, 'Redux')
+    const action = addTaskAC(todolistId1, {id: '3', title: 'Nuts'})
 
     const endState = tasksReducer(tasks, action)
 
