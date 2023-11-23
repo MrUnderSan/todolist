@@ -1,54 +1,53 @@
-import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
-import {Button} from '../Button/Button';
-import {Input} from '../Input/Input';
+import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
+import TextField from '@mui/material/TextField';
+import IconButton from '@mui/material/IconButton';
+import { AddBox } from '@mui/icons-material';
 
-type PropsType = {
+type AddItemFormPropsType = {
     addItem: (title: string) => void
+    disabled?: boolean
 }
 
-export const AddItemForm: React.FC<PropsType> = ({addItem}) => {
+export const AddItemForm = React.memo(function (props: AddItemFormPropsType) {
+    console.log('AddItemForm called')
 
-    const [value, setValue] = useState('')
+    let [title, setTitle] = useState('')
+    let [error, setError] = useState<string | null>(null)
 
-    const [error, setError] = useState<string | null>(null)
-
-    const isButtonDisabled = !value
-
-    const onChangeInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setValue(e.currentTarget.value)
-    }
-
-    const addTask = () => {
-        if (value.trim() !== '') {
-            addItem(value)
+    const addItem = () => {
+        if (title.trim() !== '') {
+            props.addItem(title);
+            setTitle('');
         } else {
-            setError('Title is required')
-        }
-        setValue('')
-    }
-
-    const onClickButtonHandler = () => {
-        addTask()
-    }
-
-    const onKeyDownInputHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-        setError(null)
-        if (e.key === 'Enter') {
-            addTask()
+            setError('Title is required');
         }
     }
 
-    return (
-        <div>
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        setTitle(e.currentTarget.value)
+    }
 
-            <Input
-                value={value}
-                onChange={onChangeInputHandler}
-                onKeyDown={onKeyDownInputHandler}
-                className={error ? 'error' : ''}
-            />
-            <Button name="+" onClick={onClickButtonHandler} disabled={isButtonDisabled}/>
-            {error && <div className="error-message">{error}</div>}
-        </div>
-    )
-};
+    const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (error !== null) {
+            setError(null);
+        }
+        if (e.charCode === 13) {
+            addItem();
+        }
+    }
+
+    return <div>
+        <TextField variant="outlined"
+                   error={!!error}
+                   value={title}
+                   onChange={onChangeHandler}
+                   onKeyPress={onKeyPressHandler}
+                   label="Title"
+                   helperText={error}
+                   disabled={props.disabled}
+        />
+        <IconButton color="primary" onClick={addItem} disabled={props.disabled}>
+            <AddBox/>
+        </IconButton>
+    </div>
+})

@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="59460528-36a1-48ac-b6a0-fcb7b5e98aa1" name="Default Changelist" comment="completed extra classes with Sergey S. (Redux Thunk)">
+      <change afterPath="$PROJECT_DIR$/src/app/app-reducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ErrorSnackbar/ErrorSnackbar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/error-utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.storybook/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.storybook/preview.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/task-api.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/todolist-api.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddItemForm/AddItemForm.stories.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddItemForm/AddItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button/Button.stories.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button/Button.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EditableSpan/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditableSpan/EditableSpan.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input/Input.stories.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input/Input.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Todolist/Task/Task.stories.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Todolist/Task/Task.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Todolist/Todolist.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/store.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/tasksReducer.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/tasksReducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/todolistsReducer.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/todolistsReducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stories/task-api.stories.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stories/todolist-api.stories.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="extra-classes" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MrUnderSan&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="97603929-496c-4778-b921-10bb85036473" />
+        <option name="url" value="git@github.com:MrUnderSan/todolist.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2GJozbdy2i56pHeFVZuRTo7LgOw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "сlasswork",
+    "last_opened_file_path": "D:/dev/it-incubator/todolist/src/stories",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "D:/dev/it-incubator/todolist/node_modules/react-scripts",
+    "nodejs_package_manager_path": "yarn",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "ts.external.directory.path": "D:\\dev\\it-incubator\\todolist\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\dev\it-incubator\todolist\src\stories" />
+      <recent name="D:\dev\it-incubator\todolist\src\api" />
+      <recent name="D:\dev\it-incubator\todolist\src\components\EditableSpan" />
+      <recent name="D:\dev\it-incubator\todolist\src\components\Task" />
+      <recent name="D:\dev\it-incubator\todolist\src\components\AddItemForm" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\dev\it-incubator\todolist\src" />
+      <recent name="D:\dev\it-incubator\todolist\src\stories\decorators" />
+      <recent name="D:\dev\it-incubator\todolist\src\components\Todolist" />
+      <recent name="D:\dev\it-incubator\todolist\src\components\Task" />
+      <recent name="D:\dev\it-incubator\todolist\src\components\EditableSpan" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="property with todolistId should be deleted" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/state/todolists-tasks-reducer.test.ts" />
+      <test-names>
+        <test-name value="property with todolistId should be deleted" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="status of specified task should be changed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/state/tasks-reducer.test.ts" />
+      <test-names>
+        <test-name value="status of specified task should be changed" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="title of specified task should be changed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/state/tasks-reducer.test.ts" />
+      <test-names>
+        <test-name value="title of specified task should be changed" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="storybook" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="storybook" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.storybook" />
+        <item itemvalue="Jest.title of specified task should be changed" />
+        <item itemvalue="Jest.status of specified task should be changed" />
+        <item itemvalue="Jest.property with todolistId should be deleted" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="59460528-36a1-48ac-b6a0-fcb7b5e98aa1" name="Default Changelist" comment="" />
+      <created>1666116314096</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666116314096</updated>
+      <workItem from="1666116316295" duration="885000" />
+      <workItem from="1666117234299" duration="1364000" />
+      <workItem from="1666118648218" duration="205000" />
+      <workItem from="1666119098385" duration="1395000" />
+      <workItem from="1666284270352" duration="702000" />
+      <workItem from="1666285081370" duration="3792000" />
+      <workItem from="1666595082608" duration="1223000" />
+      <workItem from="1666597776372" duration="1369000" />
+      <workItem from="1666599273420" duration="131000" />
+      <workItem from="1695043521302" duration="2365000" />
+      <workItem from="1695109120644" duration="4003000" />
+      <workItem from="1695114800258" duration="70000" />
+      <workItem from="1695115351716" duration="14000" />
+      <workItem from="1695135425278" duration="9567000" />
+      <workItem from="1695149379247" duration="78000" />
+      <workItem from="1695197896152" duration="9000" />
+      <workItem from="1695220673405" duration="3830000" />
+      <workItem from="1695391415960" duration="2046000" />
+      <workItem from="1695394166909" duration="5212000" />
+      <workItem from="1695402098736" duration="5000" />
+      <workItem from="1695402164395" duration="49000" />
+      <workItem from="1695402222398" duration="9000" />
+      <workItem from="1695414839121" duration="176000" />
+      <workItem from="1695480447693" duration="9000" />
+      <workItem from="1695483753785" duration="4615000" />
+      <workItem from="1695551695530" duration="24000" />
+      <workItem from="1695712119103" duration="246000" />
+      <workItem from="1695712384467" duration="259000" />
+      <workItem from="1695715037752" duration="1299000" />
+      <workItem from="1695737775130" duration="11229000" />
+      <workItem from="1695792762190" duration="1000" />
+      <workItem from="1695883949595" duration="969000" />
+      <workItem from="1695909480895" duration="5799000" />
+      <workItem from="1695915442123" duration="21000" />
+      <workItem from="1696417880021" duration="1060000" />
+      <workItem from="1696431397722" duration="55000" />
+      <workItem from="1696431471310" duration="5657000" />
+      <workItem from="1696485681549" duration="1448000" />
+      <workItem from="1696487155196" duration="1673000" />
+      <workItem from="1696488866808" duration="467000" />
+      <workItem from="1696489507817" duration="10000" />
+      <workItem from="1696514754388" duration="424000" />
+      <workItem from="1696517799474" duration="2166000" />
+      <workItem from="1696521471150" duration="6000" />
+      <workItem from="1696750080057" duration="4700000" />
+      <workItem from="1696856275038" duration="39000" />
+      <workItem from="1696856321129" duration="1530000" />
+      <workItem from="1696944059180" duration="3467000" />
+      <workItem from="1696948280487" duration="2846000" />
+      <workItem from="1697036694960" duration="43000" />
+      <workItem from="1697036777615" duration="2329000" />
+      <workItem from="1697039800972" duration="344000" />
+      <workItem from="1697040199157" duration="7590000" />
+      <workItem from="1697101385132" duration="16000" />
+      <workItem from="1697266424479" duration="711000" />
+      <workItem from="1697269148355" duration="591000" />
+      <workItem from="1697270007372" duration="8000" />
+      <workItem from="1697272396991" duration="8000" />
+      <workItem from="1697380202974" duration="79000" />
+      <workItem from="1697615672066" duration="9000" />
+      <workItem from="1697615713264" duration="11000" />
+      <workItem from="1697616171882" duration="2000" />
+      <workItem from="1697640716528" duration="851000" />
+      <workItem from="1697641606534" duration="10610000" />
+      <workItem from="1697654909397" duration="511000" />
+      <workItem from="1697720945328" duration="1947000" />
+      <workItem from="1697725531297" duration="7277000" />
+      <workItem from="1697874880461" duration="4000" />
+      <workItem from="1697875796526" duration="8000" />
+      <workItem from="1697878264260" duration="429000" />
+      <workItem from="1697878705356" duration="13417000" />
+      <workItem from="1697896129330" duration="10000" />
+      <workItem from="1698163216111" duration="147000" />
+      <workItem from="1698163401818" duration="189000" />
+      <workItem from="1698163634834" duration="575000" />
+      <workItem from="1698164241024" duration="3447000" />
+      <workItem from="1698167797491" duration="110000" />
+      <workItem from="1698167927909" duration="2566000" />
+      <workItem from="1698170580952" duration="4492000" />
+      <workItem from="1698232067835" duration="180000" />
+      <workItem from="1698232261127" duration="1772000" />
+      <workItem from="1698245105887" duration="671000" />
+      <workItem from="1698245803529" duration="343000" />
+      <workItem from="1698246181996" duration="13879000" />
+      <workItem from="1698298943740" duration="97000" />
+      <workItem from="1698502645756" duration="46000" />
+      <workItem from="1698508615453" duration="20000" />
+      <workItem from="1698508659614" duration="2631000" />
+      <workItem from="1698567434395" duration="5654000" />
+      <workItem from="1698573246509" duration="1036000" />
+      <workItem from="1698594392703" duration="20000" />
+      <workItem from="1698766507580" duration="44000" />
+      <workItem from="1698766565813" duration="1751000" />
+      <workItem from="1698769322159" duration="244000" />
+      <workItem from="1698769591696" duration="735000" />
+      <workItem from="1698770423636" duration="6377000" />
+      <workItem from="1698779234687" duration="23000" />
+      <workItem from="1698844313821" duration="127000" />
+      <workItem from="1698846973181" duration="7000" />
+      <workItem from="1699002260223" duration="9214000" />
+      <workItem from="1699081293646" duration="92000" />
+      <workItem from="1699081427776" duration="912000" />
+      <workItem from="1699082364766" duration="5652000" />
+      <workItem from="1699088432282" duration="6000" />
+      <workItem from="1699209506048" duration="766000" />
+      <workItem from="1699252313463" duration="405000" />
+      <workItem from="1699274509001" duration="605000" />
+      <workItem from="1699449155519" duration="1620000" />
+      <workItem from="1699541652909" duration="25000" />
+      <workItem from="1699541755787" duration="325000" />
+      <workItem from="1699542293021" duration="1449000" />
+      <workItem from="1699543882910" duration="802000" />
+      <workItem from="1699544810026" duration="288000" />
+      <workItem from="1699545304880" duration="361000" />
+      <workItem from="1699545685712" duration="655000" />
+      <workItem from="1699546375553" duration="8510000" />
+      <workItem from="1699556385226" duration="385000" />
+      <workItem from="1699610105391" duration="53000" />
+      <workItem from="1699620580972" duration="542000" />
+      <workItem from="1699678730954" duration="14577000" />
+      <workItem from="1699817949603" duration="54000" />
+      <workItem from="1699818178747" duration="4000" />
+      <workItem from="1699818501215" duration="301000" />
+      <workItem from="1699875730230" duration="21000" />
+      <workItem from="1699900618629" duration="696000" />
+      <workItem from="1699950047426" duration="27000" />
+      <workItem from="1700143986960" duration="1563000" />
+      <workItem from="1700147719956" duration="14466000" />
+      <workItem from="1700204552089" duration="516000" />
+      <workItem from="1700228097007" duration="635000" />
+      <workItem from="1700393531275" duration="629000" />
+      <workItem from="1700397913648" duration="4000" />
+      <workItem from="1700511379602" duration="74000" />
+      <workItem from="1700581938879" duration="357000" />
+      <workItem from="1700582365760" duration="15000" />
+      <workItem from="1700582432156" duration="7632000" />
+      <workItem from="1700668640898" duration="10000" />
+      <workItem from="1700717589659" duration="77000" />
+      <workItem from="1700718112606" duration="1370000" />
+      <workItem from="1700743843420" duration="37000" />
+      <workItem from="1700743947654" duration="353000" />
+      <workItem from="1700744375037" duration="36000" />
+      <workItem from="1700751496772" duration="14313000" />
+    </task>
+    <task id="LOCAL-00003" summary="completed 05/02/2 classwork">
+      <option name="closed" value="true" />
+      <created>1695149414782</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695149414782</updated>
+    </task>
+    <task id="LOCAL-00004" summary="completed 05/02/2 classwork">
+      <option name="closed" value="true" />
+      <created>1695149420786</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695149420786</updated>
+    </task>
+    <task id="LOCAL-00005" summary="completed 05/02/1 - 1 extra classes">
+      <option name="closed" value="true" />
+      <created>1695226699031</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1695226699031</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: start 08/02/4 classwork">
+      <option name="closed" value="true" />
+      <created>1695394121607</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1695394121607</updated>
+    </task>
+    <task id="LOCAL-00007" summary="completed 06/02/2 - 2 extra classes">
+      <option name="closed" value="true" />
+      <created>1695399846792</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695399846792</updated>
+    </task>
+    <task id="LOCAL-00008" summary="completed 08/02/4 classwork">
+      <option name="closed" value="true" />
+      <created>1695488390448</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1695488390448</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: update Material UI packages">
+      <option name="closed" value="true" />
+      <created>1695712342191</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1695712342191</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: add Material UI">
+      <option name="closed" value="true" />
+      <created>1695715052764</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1695715052764</updated>
+    </task>
+    <task id="LOCAL-00011" summary="completed 07/02/3 classwork">
+      <option name="closed" value="true" />
+      <created>1695746030027</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1695746030027</updated>
+    </task>
+    <task id="LOCAL-00012" summary="completed 07/02/3 - extra classes (userReducer)">
+      <option name="closed" value="true" />
+      <created>1695752179203</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1695752179203</updated>
+    </task>
+    <task id="LOCAL-00013" summary="completed 07/02/3 - extra classes (React Router)">
+      <option name="closed" value="true" />
+      <created>1695915351387</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1695915351387</updated>
+    </task>
+    <task id="LOCAL-00014" summary="completed 08/02/4 - extra classes (React Router / new syntax)">
+      <option name="closed" value="true" />
+      <created>1696435953447</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1696435953447</updated>
+    </task>
+    <task id="LOCAL-00015" summary="completed 09/03/1 classwork ( reducer, action creator, action type, TDD)">
+      <option name="closed" value="true" />
+      <created>1696754353272</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1696754353272</updated>
+    </task>
+    <task id="LOCAL-00016" summary="completed 09/03/1 classwork ( reducer, action creator, action type, TDD)">
+      <option name="closed" value="true" />
+      <created>1696754378177</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1696754378177</updated>
+    </task>
+    <task id="LOCAL-00017" summary="completed 10/03/2 classwork (useReducer; Redux: createStore, Provider; React Redux: useSelector, useDispatch)">
+      <option name="closed" value="true" />
+      <created>1696951147032</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1696951147032</updated>
+    </task>
+    <task id="LOCAL-00018" summary="completed 09/03/1 classwork">
+      <option name="closed" value="true" />
+      <created>1697048622317</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1697048622317</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix: 'REMOVE-TODOLIST' in tasksReducer">
+      <option name="closed" value="true" />
+      <created>1697048827977</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1697048827977</updated>
+    </task>
+    <task id="LOCAL-00020" summary="completed 10/03/5 classwork">
+      <option name="closed" value="true" />
+      <created>1697655387453</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1697655387453</updated>
+    </task>
+    <task id="LOCAL-00021" summary="completed 11/03/3 classwork (React.memo, useCallback)">
+      <option name="closed" value="true" />
+      <created>1697739610099</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1697739610099</updated>
+    </task>
+    <task id="LOCAL-00022" summary="feat: upgrade upgrade all packages">
+      <option name="closed" value="true" />
+      <created>1697879420664</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1697879420664</updated>
+    </task>
+    <task id="LOCAL-00023" summary="fix: remove App.test">
+      <option name="closed" value="true" />
+      <created>1697879444542</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1697879444542</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat: add EditableSpan">
+      <option name="closed" value="true" />
+      <created>1697882362655</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1697882362655</updated>
+    </task>
+    <task id="LOCAL-00025" summary="feat: add addTodolist functional">
+      <option name="closed" value="true" />
+      <created>1697883218101</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1697883218101</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feat: add todolistsReducer, todolistsReducer.test with action 'ADD-TODOLIST'">
+      <option name="closed" value="true" />
+      <created>1697889272943</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1697889272943</updated>
+    </task>
+    <task id="LOCAL-00027" summary="feat: add 'REMOVE-TODOLIST' reducer and test">
+      <option name="closed" value="true" />
+      <created>1697890906537</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1697890906537</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat: add 'CHANGE-FILTER' reducer and test">
+      <option name="closed" value="true" />
+      <created>1697891316511</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1697891316511</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feat: add 'CHANGE-TODOLIST-TITLE' reducer and test">
+      <option name="closed" value="true" />
+      <created>1697891621350</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1697891621350</updated>
+    </task>
+    <task id="LOCAL-00030" summary="feat: add tasksReducer, tasksReducer.test with action 'ADD-TASK'">
+      <option name="closed" value="true" />
+      <created>1697892750442</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1697892750442</updated>
+    </task>
+    <task id="LOCAL-00031" summary="feat: add 'REMOVE-TASK', 'CHANGE-TASK-STATUS' reducer and test">
+      <option name="closed" value="true" />
+      <created>1697893906858</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1697893906858</updated>
+    </task>
+    <task id="LOCAL-00032" summary="feat: add 'CHANGE-TASK-TITLE' reducer and test">
+      <option name="closed" value="true" />
+      <created>1697894242629</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1697894242629</updated>
+    </task>
+    <task id="LOCAL-00033" summary="feat: add 'ADD-TODOLIST', 'REMOVE-TODOLIST' reducer and test in tasksReducer">
+      <option name="closed" value="true" />
+      <created>1697894927491</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1697894927491</updated>
+    </task>
+    <task id="LOCAL-00034" summary="completed 11/03/1.1 - extra classes (Redux)">
+      <option name="closed" value="true" />
+      <created>1698167739976</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1698167739976</updated>
+    </task>
+    <task id="LOCAL-00035" summary="completed 11/03/1.2 - extra classes (Redux)">
+      <option name="closed" value="true" />
+      <created>1698170497447</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1698170497447</updated>
+    </task>
+    <task id="LOCAL-00036" summary="completed 11/03/1.3 - extra classes (Redux)">
+      <option name="closed" value="true" />
+      <created>1698175362336</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1698175362336</updated>
+    </task>
+    <task id="LOCAL-00037" summary="refactor: use useSelector and useDispatch in App">
+      <option name="closed" value="true" />
+      <created>1698233872683</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1698233872683</updated>
+    </task>
+    <task id="LOCAL-00038" summary="completed 11/03/3 classwork">
+      <option name="closed" value="true" />
+      <created>1698262278458</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1698262278458</updated>
+    </task>
+    <task id="LOCAL-00039" summary="completed 12/03/4 classwork">
+      <option name="closed" value="true" />
+      <created>1698574223484</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1698574223484</updated>
+    </task>
+    <task id="LOCAL-00040" summary="completed 12/03/2.1">
+      <option name="closed" value="true" />
+      <created>1698770978061</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1698770978061</updated>
+    </task>
+    <task id="LOCAL-00041" summary="completed 12/03/2.2">
+      <option name="closed" value="true" />
+      <created>1698771463548</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1698771463548</updated>
+    </task>
+    <task id="LOCAL-00042" summary="completed 12/03/2.3">
+      <option name="closed" value="true" />
+      <created>1698771957334</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1698771957334</updated>
+    </task>
+    <task id="LOCAL-00043" summary="completed 12/03/2.3">
+      <option name="closed" value="true" />
+      <created>1698776795562</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1698776795562</updated>
+    </task>
+    <task id="LOCAL-00044" summary="completed 13+ classwork">
+      <option name="closed" value="true" />
+      <created>1699081359190</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1699081359190</updated>
+    </task>
+    <task id="LOCAL-00045" summary="completed extra classes with Igor (Redux Thunk)">
+      <option name="closed" value="true" />
+      <created>1699088341980</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1699088341980</updated>
+    </task>
+    <task id="LOCAL-00046" summary="completed 13/01/1 classwork">
+      <option name="closed" value="true" />
+      <created>1699684659988</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1699684659988</updated>
+    </task>
+    <task id="LOCAL-00047" summary="completed 13/01/1 classwork">
+      <option name="closed" value="true" />
+      <created>1699684993310</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1699684993310</updated>
+    </task>
+    <task id="LOCAL-00048" summary="completed extra classes with Igor (Redux Thunk 2)">
+      <option name="closed" value="true" />
+      <created>1699692067435</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1699692067435</updated>
+    </task>
+    <task id="LOCAL-00049" summary="completed extra classes with Igor (Redux Thunk 2)">
+      <option name="closed" value="true" />
+      <created>1699692095761</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1699692095761</updated>
+    </task>
+    <task id="LOCAL-00050" summary="completed 14/04/2 classwork">
+      <option name="closed" value="true" />
+      <created>1700582235603</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1700582235603</updated>
+    </task>
+    <task id="LOCAL-00051" summary="completed extra classes with Sergey S. (Redux Thunk)">
+      <option name="closed" value="true" />
+      <created>1700590453658</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1700590453659</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="сlasswork" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="extra-classes" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="homework" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="practical-tasks" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="micro-tasks" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="сlasswork" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: add addTodolist functional" />
+    <MESSAGE value="feat: add todolistsReducer, todolistsReducer.test with action 'ADD-TODOLIST'" />
+    <MESSAGE value="feat: add 'REMOVE-TODOLIST' reducer and test" />
+    <MESSAGE value="feat: add 'CHANGE-FILTER' reducer and test" />
+    <MESSAGE value="feat: add 'CHANGE-TODOLIST-TITLE' reducer and test" />
+    <MESSAGE value="feat: add tasksReducer, tasksReducer.test with action 'ADD-TASK'" />
+    <MESSAGE value="feat: add 'REMOVE-TASK', 'CHANGE-TASK-STATUS' reducer and test" />
+    <MESSAGE value="feat: add 'CHANGE-TASK-TITLE' reducer and test" />
+    <MESSAGE value="feat: add 'ADD-TODOLIST', 'REMOVE-TODOLIST' reducer and test in tasksReducer" />
+    <MESSAGE value="completed 11/03/1.1 - extra classes (Redux)" />
+    <MESSAGE value="completed 11/03/1.2 - extra classes (Redux)" />
+    <MESSAGE value="completed 11/03/1.3 - extra classes (Redux)" />
+    <MESSAGE value="refactor: use useSelector and useDispatch in App" />
+    <MESSAGE value="completed 11/03/3 classwork" />
+    <MESSAGE value="completed 12/03/4 classwork" />
+    <MESSAGE value="completed 12/03/2.1" />
+    <MESSAGE value="completed 12/03/2.2" />
+    <MESSAGE value="completed 12/03/2.3" />
+    <MESSAGE value="completed 13+ classwork" />
+    <MESSAGE value="Merge branch 'main' into сlasswork&#10;&#10;# Conflicts:&#10;#&#9;package.json&#10;#&#9;src/App.css&#10;#&#9;src/App.tsx&#10;#&#9;src/Todolist.tsx&#10;#&#9;src/index.tsx&#10;#&#9;src/state/store.ts&#10;#&#9;yarn.lock" />
+    <MESSAGE value="completed extra classes with Igor (Redux Thunk)" />
+    <MESSAGE value="completed 13/01/1 classwork" />
+    <MESSAGE value="completed extra classes with Igor (Redux Thunk 2)" />
+    <MESSAGE value="completed 14/04/2 classwork" />
+    <MESSAGE value="completed extra classes with Sergey S. (Redux Thunk)" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed extra classes with Sergey S. (Redux Thunk)" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
+  </component>
+</project>

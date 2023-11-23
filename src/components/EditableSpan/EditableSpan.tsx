@@ -1,40 +1,30 @@
-import React, {ChangeEvent, KeyboardEvent, useState} from 'react'
+import React, { ChangeEvent, useState } from 'react';
+import TextField from '@mui/material/TextField';
 
-type PropsType = {
-    text: string
-    changeText: (text: string) => void
+
+type EditableSpanPropsType = {
+    value: string
+    onChange: (newValue: string) => void
 }
 
-export const EditableSpan = React.memo(({text, changeText}: PropsType) => {
+export const EditableSpan = React.memo(function (props: EditableSpanPropsType) {
+    console.log('EditableSpan called');
+    let [editMode, setEditMode] = useState(false);
+    let [title, setTitle] = useState(props.value);
 
-    const [editMode, setEditMode] = useState(false)
-    const [value, setValue] = useState<string>(text)
-
-    const changeEditMode = (isActive: boolean) => {
-        setEditMode(isActive)
+    const activateEditMode = () => {
+        setEditMode(true);
+        setTitle(props.value);
     }
-
-    const onDoubleClickHandler = () => {
-        changeEditMode(true)
+    const activateViewMode = () => {
+        setEditMode(false);
+        props.onChange(title);
     }
-
-    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setValue(e.currentTarget.value)
-    }
-
-
-    const onKeyDownHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter') {
-            changeText(value)
-            setEditMode(false)
-        }
-    }
-    const onBlurHandler = () => {
-        changeText(value)
-        setEditMode(false)
+    const changeTitle = (e: ChangeEvent<HTMLInputElement>) => {
+        setTitle(e.currentTarget.value)
     }
 
     return editMode
-        ? <input type="text" value={value} onChange={onChangeHandler} onKeyDown={onKeyDownHandler} onBlur={onBlurHandler} autoFocus/>
-        : <span onDoubleClick={onDoubleClickHandler}>{text}</span>
-})
+        ? <TextField value={title} onChange={changeTitle} autoFocus onBlur={activateViewMode}/>
+        : <span onDoubleClick={activateEditMode}>{props.value}</span>
+});
