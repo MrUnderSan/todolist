@@ -1,5 +1,7 @@
 import s from './DeckItem.module.css'
 import { Deck } from '../../decks-api.ts'
+import { useAppDispatch } from '../../../../app/store.ts'
+import { deleteDeck, patchDeck } from '../../decks-thunks.ts'
 
 type DeckProps = {
   deck: Deck
@@ -9,6 +11,16 @@ const TEST_ACC_NAME = 'testName'
 
 export const DeckItem = ({ deck }: DeckProps) => {
   const isTestingDeck = deck.author.name === TEST_ACC_NAME
+
+  const dispatch = useAppDispatch()
+
+  const handleDelete = () => {
+    dispatch(deleteDeck(deck.id))
+  }
+
+  const handleUpdate = () => {
+    dispatch(patchDeck(deck.id, {name: deck.name + ' updated'}))
+  }
 
   return (
     <li className={s.item}>
@@ -28,8 +40,8 @@ export const DeckItem = ({ deck }: DeckProps) => {
 
       {isTestingDeck && (
         <div className={s.buttonBox}>
-          <button>update</button>
-          <button>delete</button>
+          <button onClick={handleUpdate}>update</button>
+          <button onClick={handleDelete}>delete</button>
         </div>
       )}
     </li>

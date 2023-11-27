@@ -13,9 +13,20 @@ export const decksAPI = {
   },
   postDeck(name: string) {
     return instance.post<Deck>('decks', {name})
+  },
+  deleteDeck(id: string) {
+    return instance.delete<Deck>(`decks/${id}`)
+  },
+  patchDeck(id: string, model: PatchModelType) {
+    return instance.patch<Deck>(`decks/${id}`, model)
   }
 }
 
+export type PatchModelType = {
+  cover?: string
+  name?: string
+  isPrivate?: boolean
+}
 
 export type FetchDecksResponse = {
   items: Deck[];
