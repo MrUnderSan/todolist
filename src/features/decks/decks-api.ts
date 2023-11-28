@@ -9,50 +9,51 @@ export const instance = axios.create({
 
 export const decksAPI = {
   fetchDecks() {
-    return instance.get<FetchDecksResponse>('decks')
+    return instance.get<FetchDecksResponse>(`decks`)
   },
-  postDeck(name: string) {
-    return instance.post<Deck>('decks', {name})
+  addDeck(name: string) {
+    return instance.post<Deck>(`decks`, {
+      name,
+    })
   },
   deleteDeck(id: string) {
     return instance.delete<Deck>(`decks/${id}`)
   },
-  patchDeck(id: string, model: PatchModelType) {
-    return instance.patch<Deck>(`decks/${id}`, model)
-  }
+  updateDeck({ id, name }: UpdateDeckParams) {
+    return instance.patch<Deck>(`decks/${id}`, { name })
+  },
 }
 
-export type PatchModelType = {
-  cover?: string
-  name?: string
-  isPrivate?: boolean
+export type UpdateDeckParams = {
+  id: string
+  name: string
 }
 
 export type FetchDecksResponse = {
-  items: Deck[];
-  pagination: Pagination;
-  maxCardsCount: number;
+  items: Deck[]
+  pagination: Pagination
+  maxCardsCount: number
 }
 export type Author = {
-  id: string;
-  name: string;
+  id: string
+  name: string
 }
 export type Deck = {
-  author: Author;
-  id: string;
-  userId: string;
-  name: string;
-  isPrivate: boolean;
-  shots: number;
-  cover: string;
-  rating: number;
-  created: string;
-  updated: string;
-  cardsCount: number;
+  author: Author
+  id: string
+  userId: string
+  name: string
+  isPrivate: boolean
+  shots: number
+  cover: string
+  rating: number
+  created: string
+  updated: string
+  cardsCount: number
 }
 export type Pagination = {
-  currentPage: number;
-  itemsPerPage: number;
-  totalPages: number;
-  totalItems: number;
+  currentPage: number
+  itemsPerPage: number
+  totalPages: number
+  totalItems: number
 }
