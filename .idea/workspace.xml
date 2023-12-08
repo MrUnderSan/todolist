@@ -4,24 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59460528-36a1-48ac-b6a0-fcb7b5e98aa1" name="Default Changelist" comment="completed extra classes with Sergey S. (Redux Thunk)">
-      <change afterPath="$PROJECT_DIR$/src/features/Login/Login.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/Login/auth-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="59460528-36a1-48ac-b6a0-fcb7b5e98aa1" name="Default Changelist" comment="completed 16/04/4 classwork">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/todolists-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolists-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddItemForm/AddItemForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/EditableSpan/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditableSpan/EditableSpan.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ErrorSnackbar/ErrorSnackbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ErrorSnackbar/ErrorSnackbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/Login/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Login/auth-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/Todolist/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/Todolist/Task/Task.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/Todolist/Todolist.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" afterDir="false" />
@@ -29,10 +31,12 @@
       <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/todolists-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/todolists-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reportWebVitals.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/unit.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/unit.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/unit.test.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/error-utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/error-utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +77,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -87,27 +94,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;сlasswork&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/dev/it-incubator/todolist/src/stories&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;D:/dev/it-incubator/todolist/node_modules/react-scripts&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\dev\\it-incubator\\todolist\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "сlasswork",
+    "last_opened_file_path": "D:/dev/it-incubator/todolist/src/stories",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "D:/dev/it-incubator/todolist/node_modules/react-scripts",
+    "nodejs_package_manager_path": "yarn",
+    "npm.start.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "D:\\dev\\it-incubator\\todolist\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "preferences.sourceCode.TypeScript",
+    "ts.external.directory.path": "D:\\dev\\it-incubator\\todolist\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\dev\it-incubator\todolist\src\stories" />
@@ -342,15 +351,17 @@
       <workItem from="1700743947654" duration="353000" />
       <workItem from="1700744375037" duration="36000" />
       <workItem from="1700751496772" duration="14313000" />
-      <workItem from="1701348552302" duration="15347000" />
-    </task>
-    <task id="LOCAL-00003" summary="completed 05/02/2 classwork">
-      <option name="closed" value="true" />
-      <created>1695149414782</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1695149414782</updated>
+      <workItem from="1701348552302" duration="15583000" />
+      <workItem from="1701430568034" duration="19000" />
+      <workItem from="1701524063523" duration="56000" />
+      <workItem from="1701601364895" duration="62000" />
+      <workItem from="1701603968572" duration="4310000" />
+      <workItem from="1701889067077" duration="808000" />
+      <workItem from="1701890360686" duration="363000" />
+      <workItem from="1702038895366" duration="33000" />
+      <workItem from="1702039000309" duration="15000" />
+      <workItem from="1702039103409" duration="1023000" />
+      <workItem from="1702047178928" duration="14853000" />
     </task>
     <task id="LOCAL-00004" summary="completed 05/02/2 classwork">
       <option name="closed" value="true" />
@@ -736,7 +747,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700590453659</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="completed 16/04/4 classwork">
+      <option name="closed" value="true" />
+      <created>1701373439923</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1701373439924</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -806,7 +825,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add addTodolist functional" />
     <MESSAGE value="feat: add todolistsReducer, todolistsReducer.test with action 'ADD-TODOLIST'" />
     <MESSAGE value="feat: add 'REMOVE-TODOLIST' reducer and test" />
     <MESSAGE value="feat: add 'CHANGE-FILTER' reducer and test" />
@@ -831,7 +849,8 @@
     <MESSAGE value="completed extra classes with Igor (Redux Thunk 2)" />
     <MESSAGE value="completed 14/04/2 classwork" />
     <MESSAGE value="completed extra classes with Sergey S. (Redux Thunk)" />
-    <option name="LAST_COMMIT_MESSAGE" value="completed extra classes with Sergey S. (Redux Thunk)" />
+    <MESSAGE value="completed 16/04/4 classwork" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed 16/04/4 classwork" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
